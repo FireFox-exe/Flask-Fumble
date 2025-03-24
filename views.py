@@ -6,7 +6,7 @@ from models import games, users
 def index():
     # Just rendering home.html and showing the game list
     list = games.query.order_by(games.id)
-    return render_template('list.html', title='Game', game_list=list)
+    return render_template('list.html', title='Game', games=list)
 
 @app.route('/new')
 def new():
@@ -22,8 +22,8 @@ def create():
     category = request.form['category']
     company = request.form['company']
 
-    games = games.query.filter_by(name=name).first()
-    if games:# Verifies if the game already exists
+    game = games.query.filter_by(name=name).first()
+    if game:# Verifies if the game already exists
         flash('Game already exists!')
         return redirect(url_for('new'))
     
@@ -49,10 +49,24 @@ def update():
     game.category = request.form['category']
     game.company = request.form['company']
  
-    db.session.add(game)
+    db.session.add(games)
     db.session.commit() # Commits the changes
+    flash('Game deleted successfully!')
 
     return redirect(url_for('index'))  # Redirects to game list(home)
+
+
+
+@app.route('/delete/<int:id>')
+def delete(id):
+    # If the user isn't logged in, they’re blocked from accessing this page
+    if 'logged_in_user' not in session or session['logged_in_user'] == None:
+        return redirect(url_for('login', next=url_for('delete')))
+    game = games.query.filter_by(id=id).first()
+    db.session.delete(game)
+    db.session.commit() # Commits the changes
+    return redirect(url_for('index'))  # Redirects to game list(home)
+
 
 @app.route('/login')
 def login():

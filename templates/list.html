@@ -10,12 +10,15 @@
             </tr>
         </thead>
         <tbody>
-            {% for game in game_list %}
+            {% for game in games %}
            <tr>
               <td>{{ game.name }}</td>
               <td>{{ game.category }}</td>
               <td>{{ game.company }}</td>
-              <td><a href="{{ url_for('edit', id=game.id) }}"> Editar </a></td>
+              <td>
+               <a href="{{ url_for('edit', id=game.id) }}"> Edit </a>
+               <a href="{{ url_for('delete', id=game.id) }}"> Delete </a>
+            </td>
            </tr>
               {% endfor %}
         </tbody>

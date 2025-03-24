@@ -30,7 +30,7 @@ TABLES['games'] = ('''
       `id` int(11) NOT NULL AUTO_INCREMENT,
       `name` varchar(50) NOT NULL,
       `category` varchar(40) NOT NULL,
-      `company` varchar(20) NOT NULL,
+      `company` varchar(50) NOT NULL,
       PRIMARY KEY (`id`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;''')
 
@@ -39,7 +39,7 @@ TABLES['users'] = ('''
       `id` int(11) NOT NULL AUTO_INCREMENT,
       `nickname` varchar(8) NOT NULL,
       `password` varchar(100) NOT NULL,
-      PRIMARY KEY (`nickname`)
+      PRIMARY KEY (`id`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;''')
 
 for table_name in TABLES:
@@ -58,9 +58,9 @@ for table_name in TABLES:
 # Inserting users (we’re populating the world with cool people)
 user_sql = 'INSERT INTO users (nickname, password) VALUES (%s, %s)'
 users = [
-      ("Ayres", "welcome".Strip()),
-      ("ALC", "hamsters".Strip()),
-      ("JsS", "password123".Strip())
+      ("ayres","welcome".strip()),
+      ("alc","hamsters".strip()),
+      ("jss", "password123".strip())
 ]
 cursor.executemany(user_sql, users)
 
