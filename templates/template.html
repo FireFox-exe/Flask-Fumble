@@ -22,15 +22,7 @@
       <div class="page-header">
          <h1>{{ title }}</h1>
       </div>
-
-        {% if session.get('logged_in_user') %}
-        <!-- Show the logout button only if the user is logged in -->
-        <form method="POST" action="{{ url_for('logout') }}">
-            <button type="submit" class="btn btn-danger">Logout</button>
-        </form>
-        {% endif %}
-        
-      {% block content %}  {% endblock %}
+      {% block content %}{% endblock %}
     </div>
 </body>
 </html>
