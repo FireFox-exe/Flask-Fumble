@@ -1,24 +1,30 @@
 {% extends "template.html" %}
 {% block content %}
-      <form method="post" action="{{ url_for('update') }}">
+      <form class="game_formulary" post" action="{{ url_for('update') }}">
+        
+       <figure class="img-thumpnail col-md-4 img_formulary">
+          <img src="static/img/logo.png" alt="USE_REST_API"> 
+        </figure>
         <fieldset>
           <input type="hidden" name="id" value="{{ id }}">
           {{ form.csrf_token() }}
-          <div class="form-group">
+          <div class="form-group inputBox">
             {{ form.name.label(class="form-label") }}
             {{ form.name(class="form-control") }}
           </div>
-          <div class="form-group">
+          <div class="form-group inputBox">
             {{ form.category.label(class="form-label") }}
             {{ form.category(class="form-control") }}
           </div>
-          <div class="form-group">
+          <div class="form-group inputBox">
             <label for="company">company</label>
             {{ form.company.label(class="form-label") }}
             {{ form.company(class="form-control") }}
           </div>
-          <div class="form-group">
+          <div class="form-group buttos">
             {{ form.submit(class="btn btn-primary") }}
+            {{ form.cancel(class="btn btn-danger") }}
+          </div>
         </fieldset>
       </form>
 {% endblock %}
