@@ -1,15 +1,44 @@
-Flask-Fumble:
-🚀 Welcome to my Flask playground! This is where I test, stumble, and learn. Mistakes will be made, lessons will be learned, and hopefully, something cool will come out of it.
+#  API4Noobs
 
-About:
-"Flask Rookie Moves: From Scratch" pretty much sums it up. If you're new to Flask and figuring things out like me, Expect basic API setups, login systems, and a lot of trial and error.
+> Um projeto minimalista, mas essencial — feito para aprender, testar e dominar os fundamentos de uma API com autenticação, banco de dados e criptografia de senha.
 
-What to Expect
-✔️ First steps with Flask
-✔️ Authentication & session handling
-✔️ Routing and templates
-✔️ Probably some bugs 🤷
+##  Sobre o Projeto
 
-Disclaimer
+O **API4Noobs** é uma aplicação web construída com Flask que permite a criação, edição, visualização e exclusão de jogos, além da autenticação de usuários com senhas criptografadas.
 
-This is not a pro-level tutorial it's a learning journey. This project is totally casual, just me experimenting with Flask for fun and seeing where it goes. No grand ambitions, no pressure—just pure curiosity. Feel free to open issues or suggest improvements!
+Criado com a proposta de **aprender na prática** o ciclo de vida de uma API, este projeto cobre:
+
+- Criação e leitura de dados com SQLAlchemy
+- Autenticação com Flask-Login + Bcrypt
+- Formulários com Flask-WTF
+- Proteção CSRF
+- Estrutura de templates HTML com Flask
+
+---
+
+##  Tecnologias Utilizadas
+
+- **Flask** — microframework web
+- **Flask-WTF** — manipulação de formulários
+- **Flask-Bcrypt** — criptografia de senhas
+- **SQLAlchemy** — ORM para banco de dados
+- **MySQL** — banco relacional
+- **WTForms** — validações nos formulários
+
+---
+
+## ⚙️ Funcionalidades
+
+- 🔐 Login e logout com sessões e criptografia
+- 📋 Listagem de jogos cadastrados
+- ➕ Cadastro de novos jogos
+- ✏️ Edição de jogos existentes
+- ❌ Exclusão de jogos
+- 🧪 Validação de formulário com WTForms
+- 🧱 Criação automatizada do banco e tabelas
+- 💬 Feedbacks ao usuário com Flask Flash
+
+---
+
+## 🗂 Estrutura Básica
+
