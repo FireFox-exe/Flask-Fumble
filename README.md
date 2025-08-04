@@ -41,4 +41,19 @@ Criado com a proposta de **aprender na prática** o ciclo de vida de uma API, es
 ---
 
 ## 🗂 Estrutura Básica
+api4noobs/
+│
+├── app.py # Instância do app Flask
+├── game_views.py # Rotas para CRUD de jogos
+├── users_views.py # Rotas para autenticação
+├── models.py # Definições de tabelas do banco
+├── forms.py # Formulários WTForms
+├── settings.py # Configurações (chave secreta, URI do banco etc.)
+├── init_db.py # Criação inicial do banco e inserção de dados
+├── templates/ # Templates HTML
+│ ├── list.html
+│ ├── new.html
+│ ├── edit.html
+│ └── login.html
+└── static/ # (opcional) Estilos e scripts
 
