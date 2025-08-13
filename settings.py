@@ -1,12 +1,8 @@
+import os
 
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
-SECRET_KEY = 'hardpassword' # Because who needs an easy one?
+SECRET_KEY = os.environ.get('SECRET_KEY', 'hardpassword')
 
-SQLALCHEMY_DATABASE_URI = \
-    '{SGBD}://{user}:{password}@{host}/{database}'.format(
-        SGBD = 'mysql+mysqlconnector',
-        user = 'main_root',
-        password = 'welcome',
-        host = 'localhost',
-        database = 'api4noobs'
-    )
+SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'database.db')
+SQLALCHEMY_TRACK_MODIFICATIONS = False

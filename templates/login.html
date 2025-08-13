@@ -21,7 +21,7 @@
 
         <h1>Login</h1>
 
-                <form method="POST" action="{{ url_for('auth') }}">
+        <form method="POST" action="{{ url_for('auth') }} " class="container>
             <input type="hidden" name="next" value="{{ next or url_for('index') }}">
             {{ form.csrf_token() }}
             <div class="form-group">
@@ -32,11 +32,11 @@
                 {{ form.password.label(class="form-label") }}
                 {{ form.password(class="form-control") }}
             </div>
-            <div>
+            <div class="butoes__auth">
                 {{ form.login(class="btn btn-primary") }}
+                <a class="btn btn-danger" href="{{ url_for('index') }}">Back</a>
             </div>
         </form>
-        <a class="btn btn-danger" href="{{ url_for('index') }}">Back</a>
     </div>
 </body>
 </html>

@@ -55,14 +55,14 @@ def edit(id):
 def update():
     form = GameForm(request.form)
 
-    if not form.validate_on_submit(): # Verifies if the form is valid
-
+    if form.validate_on_submit():
+        
         game_id = request.form['id']
         game = games.query.filter_by(id=game_id).first()
         game.name = form.name.data
         game.category = form.category.data
         game.company = form.company.data
-    
+
         db.session.add(game)
         db.session.commit() # Commits the changes
         flash('Game deleted successfully!')
